@@ -15,7 +15,7 @@ public class OnJoinListener extends ListenerAdapter{
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(new Color(29, 128, 238));
         eb.setDescription("Дамы и господа! Пожаловал: " + event.getMember().getUser().getAsMention());
-        eb.setFooter("Вас уже: " + event.getGuild().getMemberCount() + " в этом замечательном месте");
+        eb.setFooter("Нас уже: " + event.getGuild().getMemberCount() + " в этом замечательном месте");
         eb.setThumbnail(event.getMember().getUser().getEffectiveAvatarUrl());
         eb.setTimestamp(Instant.now());
         event.getGuild().getTextChannelById(969568922900791357L).sendMessage((Message) eb.build()).complete();

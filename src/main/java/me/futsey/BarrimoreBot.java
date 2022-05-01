@@ -2,6 +2,7 @@ package me.futsey;
 
 import me.futsey.listeners.OnJoinListener;
 import me.futsey.listeners.OnLeaveListener;
+import me.futsey.task.BotStatusTask;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -23,10 +24,12 @@ public class BarrimoreBot {
         executorService = Executors.newScheduledThreadPool(10);
         jda = createUser();
         if (jda == null) return;
+
+        new BotStatusTask(this);
     }
 
     public JDA createUser() {
-        JDABuilder jda = JDABuilder.createDefault("OTY5ODM5OTQ4Mjc2NTk2NzU2.YmzP1g.ZbCFSLvib1mkB9kPYip0VshWfHM");
+        JDABuilder jda = JDABuilder.createDefault("");
         jda.addEventListeners(
                 new Main(),
                 new OnJoinListener(),
